@@ -1,5 +1,5 @@
 {
-  "name": "express-generator",
+  "name": "website-nodejs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,24 +9,19 @@
     "bootstrap": "^4.5.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "^4.16.4",
+    "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.5.1",
     "morgan": "~1.9.1",
-    "popper.js": "^1.16.1",
-    "pug": "2.0.0-beta11"
+    "popper.js": "^1.16.1"
   },
-  "description": "website with express-generator",
-  "main": "app.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/makubex64/website-nodejs.git"
-  },
-  "author": "Jorge Adarmes",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/makubex64/website-nodejs/issues"
-  },
-  "homepage": "https://github.com/makubex64/website-nodejs#readme"
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.0.3",
+    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-template-pug": "^1.1.1",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
 }
