@@ -1,27 +1,19 @@
 const path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
  
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
  
 module.exports = {
-
     entry: {
         app: './app.js'
     },
-    output: {
-        path: path.resolve(__dirname, '/dist'),
-        filename: 'bundle.js'
-        
-    }
     module: {
         rules: [
           {
             test: /\.pug$/,
             use: [
-              "raw-loader",
-              "pug-html-loader"
+              "pug-loader"
             ]
           }
         ],
@@ -31,22 +23,30 @@ module.exports = {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: 'views/index.pug',
+        template: './views/index.pug',
         filename: 'index.html'
+
       }),
       new HtmlWebpackPlugin({
-        template: 'views/nosotros.pug',
+        template: './views/nosotros.pug',
         filename: 'nosotros.html'
+
       }),
       new HtmlWebpackPlugin({
-        template: 'views/servicios.pug',
+        template: './views/servicios.pug',
         filename: 'servicios.html'
+
       }),
       new HtmlWebpackPlugin({
-        template: 'views/contacto.pug',
+        template: './views/contacto.pug',
         filename: 'contacto.html'
-      })
+
+      }),
+
     ],
-    mode: 'production'
-   
+    mode: 'production',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
 };
